@@ -223,40 +223,40 @@ It also contained the following tables:
 The staff table contained the following fields:
 
 # Hospital Employee Salary Records
+# Hospital Employee Salary Records
 
-| ID | Employee Name           | Job Title                     | Department                  | Monthly Salary (ZAR) |
-| 1  | Dr. Rajesh Naidoo       | Chief Pathologist             | Diagnostics Lab             | 138000               |
-| 2  | Sarah Botha             | Chief Financial Officer       | Finance                     | 152000               |
-| 3  | Dr. Johan van der Merwe | Medical Director              | Management                  | 160000               |
-| 4  | Dr. Anita Naicker       | Consultant Cardiologist       | Cardiology                  | 132000               |
-| 5  | Dr. Ahmed Kara          | Consultant Physician          | Internal Medicine           | 128000               |
-| 6  | Dr. Yusuf Cassim        | Senior Registrar              | Emergency & Trauma          | 74000                |
-| 7  | Michael Roberts         | HR Director                   | Human Resources             | 96000                |
-| 8  | Susan Pretorius         | HR Officer                    | Human Resources             | 32000                |
-| 9  | Jameel Malik            | IT Systems Administrator      | IT                          | 58000                |
-| 10 | Thabo Molefe            | Network Engineer              | IT                          | 46000                |
-| 11 | Nomvula Khumalo         | Registered Nurse              | Emergency & Trauma          | 34000                |
-| 12 | Lerato Mokoena          | Registered Nurse              | Pediatrics                  | 33000                |
-| 13 | Bongani Ndlovu          | Registered Nurse              | Cardiology                  | 35000                |
-| 14 | Zanele Mahlangu         | Nursing Sister                | Theatre                     | 42000                |
-| 15 | Kagiso Sithole          | Pharmacist                    | Pharmacy                    | 61000                |
-| 16 | Naledi Zulu             | Pharmacy Assistant            | Pharmacy                    | 26000                |
-| 17 | Themba Nkosi            | Radiographer                  | Radiology                   | 44000                |
-| 18 | Palesa Radebe           | Radiographer                  | Radiology                   | 43000                |
-| 19 | Deepak Pillay           | Lab Technologist              | Diagnostics Lab             | 41000                |
-| 20 | Kavitha Govender        | Lab Technician                | Diagnostics Lab             | 35000                |
-| 21 | Dr. Suresh Moodley      | Consultant Radiologist        | Radiology                   | 130000               |
-| 22 | Dr. Fatima Patel        | Pediatrician                  | Pediatrics                  | 118000               |
-| 23 | Nisha Singh             | Physiotherapist               | Rehabilitation              | 48000                |
-| 24 | Dr. Vikram Chetty       | Anaesthetist                  | Theatre                     | 135000               |
-| 25 | David Smith             | Facilities Manager            | Operations                  | 52000                |
-| 26 | Karen O'Connor          | Billing Administrator         | Finance                     | 29000                |
-| 27 | James Wilson            | Security Supervisor           | Operations                  | 27000                |
-| 28 | Linda Fourie            | Receptionist                  | Front Office                | 19000                |
-| 29 | Peter van Wyk           | Procurement Officer           | Supply Chain                | 38000                |
-| 30 | Andile Mbeki            | Ward Clerk                    | Administration              | 21000                |
-
-The SQL dump included multiple employee records and their associated employment and salary information.
+| ID | Employee Name | Job Title | Department | Monthly Salary (ZAR) |
+|---:|---|---|---|---:|
+| 1 | Dr. Rajesh Naidoo | Chief Pathologist | Diagnostics Lab | 138000 |
+| 2 | Sarah Botha | Chief Financial Officer | Finance | 152000 |
+| 3 | Dr. Johan van der Merwe | Medical Director | Management | 160000 |
+| 4 | Dr. Anita Naicker | Consultant Cardiologist | Cardiology | 132000 |
+| 5 | Dr. Ahmed Kara | Consultant Physician | Internal Medicine | 128000 |
+| 6 | Dr. Yusuf Cassim | Senior Registrar | Emergency & Trauma | 74000 |
+| 7 | Michael Roberts | HR Director | Human Resources | 96000 |
+| 8 | Susan Pretorius | HR Officer | Human Resources | 32000 |
+| 9 | Jameel Malik | IT Systems Administrator | IT | 58000 |
+| 10 | Thabo Molefe | Network Engineer | IT | 46000 |
+| 11 | Nomvula Khumalo | Registered Nurse | Emergency & Trauma | 34000 |
+| 12 | Lerato Mokoena | Registered Nurse | Pediatrics | 33000 |
+| 13 | Bongani Ndlovu | Registered Nurse | Cardiology | 35000 |
+| 14 | Zanele Mahlangu | Nursing Sister | Theatre | 42000 |
+| 15 | Kagiso Sithole | Pharmacist | Pharmacy | 61000 |
+| 16 | Naledi Zulu | Pharmacy Assistant | Pharmacy | 26000 |
+| 17 | Themba Nkosi | Radiographer | Radiology | 44000 |
+| 18 | Palesa Radebe | Radiographer | Radiology | 43000 |
+| 19 | Deepak Pillay | Lab Technologist | Diagnostics Lab | 41000 |
+| 20 | Kavitha Govender | Lab Technician | Diagnostics Lab | 35000 |
+| 21 | Dr. Suresh Moodley | Consultant Radiologist | Radiology | 130000 |
+| 22 | Dr. Fatima Patel | Pediatrician | Pediatrics | 118000 |
+| 23 | Nisha Singh | Physiotherapist | Rehabilitation | 48000 |
+| 24 | Dr. Vikram Chetty | Anaesthetist | Theatre | 135000 |
+| 25 | David Smith | Facilities Manager | Operations | 52000 |
+| 26 | Karen O'Connor | Billing Administrator | Finance | 29000 |
+| 27 | James Wilson | Security Supervisor | Operations | 27000 |
+| 28 | Linda Fourie | Receptionist | Front Office | 19000 |
+| 29 | Peter van Wyk | Procurement Officer | Supply Chain | 38000 |
+| 30 | Andile Mbeki | Ward Clerk | Administration | 21000 |
 
 8.3 Shareholder information exposed
 
