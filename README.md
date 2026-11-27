@@ -2,19 +2,20 @@
 An authorised black-box penetration testing project documenting SQL injection, authentication bypass, exposed database backup, and sensitive data exposure in the simulated Mediroza Hospital environment.
 
 
+Penetration Testing Report
 
-# Mediroza Hospital – Web Application Security Assessment
+Mediroza Hospital – Web Application Security Assessment
 
-Assessment type:     Authorised Black-Box Web Application Penetration Test
-Target:              https://medirozahospital.com
-Assessment period:   26–27 November 2026
+Assessment type: Authorised Black-Box Web Application Penetration Test
+Target: https://medirozahospital.com
+Assessment period: 26–27 November 2026
 Testing environment: Kali Linux, VirtualBox and Microsoft Edge
-Assessment scope:    Public website, patient portal, exposed directories, authentication mechanism and accessible database                           backup
-Project:             NetworkWalks Cybersecurity Internship Assignment
+Assessment scope: Public website, patient portal, exposed directories, authentication mechanism and accessible database backup
+Project: NetworkWalks Cybersecurity Internship Assignment
 
 ⸻
 
-# 1. Executive Summary
+1. Executive Summary
 
 An authorised penetration test was conducted against the Mediroza Hospital web application to identify security weaknesses and assess the confidentiality of information accessible through the website.
 
@@ -30,64 +31,63 @@ The accessible SQL backup contained database definitions and records for hospita
 
 These findings demonstrate significant weaknesses in authentication security, database protection and sensitive information exposure.
 
-# 2. Scope and Objectives
+2. Scope and Objectives
 
 The assessment focused on the following objectives:
- * Identify publicly accessible directories and files.
- * Examine the patient portal authentication mechanism.
- * Test for SQL injection vulnerabilities.
- * Determine whether authentication controls could be bypassed.
- * Identify confidential laboratory reports accessible through the portal.
- * Examine the exposed database backup and identify the categories of information disclosed.
- * Document findings and recommend appropriate security controls.
+
+* Identify publicly accessible directories and files.
+* Examine the patient portal authentication mechanism.
+* Test for SQL injection vulnerabilities.
+* Determine whether authentication controls could be bypassed.
+* Identify confidential laboratory reports accessible through the portal.
+* Examine the exposed database backup and identify the categories of information disclosed.
+* Document findings and recommend appropriate security controls.
 
 Testing was limited to the authorised assessment scope. Social engineering and denial-of-service testing were not performed.
 
-# 3. Methodology and Tools
+3. Methodology and Tools
 
 The assessment followed a black-box testing approach, examining the application from an external user’s perspective.
 
-* Tool / Technique	                      Purpose
-* WHOIS                            	Domain registration and ownership information
-* DNSRecon                        	DNS record enumeration
-* WhatWeb	                          Web technology identification
-* Microsoft Edge	                  Website and portal inspection
-* Browser Developer Tools    	      Examination of HTTP requests and responses
-* Kali Linux	                      Security testing environment
-* SQL injection testing	            Assessment of login authentication
-* SQL backup inspection	            Identification of exposed database information
+Tool / Technique	Purpose
+WHOIS	Domain registration and ownership information
+DNSRecon	DNS record enumeration
+WhatWeb	Web technology identification
+Microsoft Edge	Website and portal inspection
+Browser Developer Tools	Examination of HTTP requests and responses
+Kali Linux	Security testing environment
+SQL injection testing	Assessment of login authentication
+SQL backup inspection	Identification of exposed database information
 
-# 4. Reconnaissance and Information Gathering
+4. Reconnaissance and Information Gathering
 
 4.1 WHOIS Enumeration
 
 The following domain information was identified:
 
-Item	                     Observation
-Domain	                   medirozahospital.com
-Registrar	                 Namecheap, Inc.
-Registration date        	 14 August 2026
-Updated date      	       17 August 2026
-Expiry date	               14 August 2027
-Domain status	             Client Transfer Prohibited
-DNSSEC	                   Unsigned
-Nameservers	               dns1.namecheaphosting.com; dns2.namecheaphosting.com
-
+Item	Observation
+Domain	medirozahospital.com
+Registrar	Namecheap, Inc.
+Registration date	14 August 2026
+Updated date	17 August 2026
+Expiry date	14 August 2027
+Domain status	Client Transfer Prohibited
+DNSSEC	Unsigned
+Nameservers	dns1.namecheaphosting.com; dns2.namecheaphosting.com
 
 4.2 DNS Enumeration
 
 DNSRecon identified the following records:
 
-Record	                   Identified value
-A                        	 199.188.201.16
-MX	                       mx1-hosting.jellyfish.systems
-MX	                       mx2-hosting.jellyfish.systems
-MX	                       mx3-hosting.jellyfish.systems
-TXT                        v=DMARC1; p=none
-Additional records	       SOA, NS, SRV
+Record	Identified value
+A	199.188.201.16
+MX	mx1-hosting.jellyfish.systems
+MX	mx2-hosting.jellyfish.systems
+MX	mx3-hosting.jellyfish.systems
+TXT	v=DMARC1; p=none
+Additional records	SOA, NS, SRV
 
 The DNS results also included service-discovery records associated with CalDAV, CardDAV, Autodiscover and cPanel.
-
 
 4.3 Web Technology Identification
 
@@ -101,15 +101,15 @@ WhatWeb identified:
 
 The website source also contained the CMS identification string Mediroza CMS 1.4.2.
 
-# 5. Directory and File Discovery
+5. Directory and File Discovery
 
 The website’s robots.txt file contained the following entries:
 
-Path	             Observation
-/patient/	         Disallowed for crawlers
-/staff/	           Disallowed for crawlers
-/old/ 	           Disallowed for crawlers
-/sitemap.xml	     Sitemap reference
+Path	Observation
+/patient/	Disallowed for crawlers
+/staff/	Disallowed for crawlers
+/old/	Disallowed for crawlers
+/sitemap.xml	Sitemap reference
 
 The sitemap listed the following public pages:
 
@@ -124,9 +124,9 @@ mediroza_db_backup_2019.sql
 
 The backup was accessible through the browser without an additional authentication step.
 
-*Security significance*:   The robots.txt entries were crawler instructions, not access-control restrictions. The exposed backup file represented a significant information-disclosure risk.
+Security significance: The robots.txt entries were crawler instructions, not access-control restrictions. The exposed backup file represented a significant information-disclosure risk.
 
-# 6. SQL Injection – Patient Portal Authentication Bypass
+6. SQL Injection – Patient Portal Authentication Bypass
 
 Critical finding
 
@@ -157,9 +157,13 @@ The application subsequently displayed a MySQL syntax warning when a related mal
 6.4 Successful authentication bypass
 
 The SQL injection test was then used to bypass the normal login failure.
+
 The patient portal granted access without the expected successful username-and-password authentication process.
+
 The portal displayed the authenticated user’s report page, titled:
-"My Lab Reports"
+
+My Lab Reports
+
 This confirmed that the authentication mechanism was vulnerable to SQL injection.
 
 6.5 Evidence
@@ -183,22 +187,22 @@ An attacker could potentially:
 
 The vulnerability is classified as Critical because it allows authentication bypass and access to confidential information.
 
-# 7. Confidential Laboratory Reports Discovered
+7. Confidential Laboratory Reports Discovered
 
 Following successful access to the patient portal, three password-protected PDF reports were displayed.
 
-No.	Report title	                   Lab reference	 Report date	       File status
-1.	Pathology Report – S. Dlamini	   LR-2024-1187	   04 November 2024	   PDF encrypted
-2.  Pathology Report – P. Reddy	     LR-2024-1192	   05 November 2024	   PDF encrypted
-3.	Pathology Report – E. Thompson	 LR-2024-1205  	 06 November 2024	   PDF encrypted
+No.	Report title	Lab reference	Report date	File status
+1	Pathology Report – S. Dlamini	LR-2024-1187	04 November 2024	PDF encrypted
+2	Pathology Report – P. Reddy	LR-2024-1192	05 November 2024	PDF encrypted
+3	Pathology Report – E. Thompson	LR-2024-1205	06 November 2024	PDF encrypted
 
 The portal indicated that the reports were password-protected and that the password would be provided by the laboratory.
 
-*Finding:* Confidential laboratory documents were accessible after bypassing the portal’s authentication mechanism.
+Finding: Confidential laboratory documents were accessible after bypassing the portal’s authentication mechanism.
 
-The assessment evidence confirms that the three files were listed and available for download. They were successful decrypted and the contents of the reports are provided in this report.
+The assessment evidence confirms that the three files were listed and available for download. Their successful decryption or the contents of the reports are not claimed in this report because that evidence was not provided.
 
-# 8. Exposed Database Backup
+8. Exposed Database Backup
 
 Critical finding
 
@@ -207,6 +211,7 @@ Critical finding
 /old/mediroza_db_backup_2019.sql
 
 The directory listing showed the database backup file with an approximate displayed size of 7 KB.
+
 The SQL file contained database creation statements, table structures and inserted records.
 
 The backup identified the database as:
@@ -222,41 +227,17 @@ It also contained the following tables:
 
 The staff table contained the following fields:
 
-# Hospital Employee Salary Records
-# Hospital Employee Salary Records
+Field	Description
+id	Staff record identifier
+full_name	Employee name
+job_title	Employee designation
+department	Department or work area
+email	Employee email address
+phone	Employee contact number
+monthly_salary_zar	Monthly salary in South African rand
+date_joined	Employment joining date
 
-| ID | Employee Name | Job Title | Department | Monthly Salary (ZAR) |
-|---:|---|---|---|---:|
-| 1 | Dr. Rajesh Naidoo | Chief Pathologist | Diagnostics Lab | 138000 |
-| 2 | Sarah Botha | Chief Financial Officer | Finance | 152000 |
-| 3 | Dr. Johan van der Merwe | Medical Director | Management | 160000 |
-| 4 | Dr. Anita Naicker | Consultant Cardiologist | Cardiology | 132000 |
-| 5 | Dr. Ahmed Kara | Consultant Physician | Internal Medicine | 128000 |
-| 6 | Dr. Yusuf Cassim | Senior Registrar | Emergency & Trauma | 74000 |
-| 7 | Michael Roberts | HR Director | Human Resources | 96000 |
-| 8 | Susan Pretorius | HR Officer | Human Resources | 32000 |
-| 9 | Jameel Malik | IT Systems Administrator | IT | 58000 |
-| 10 | Thabo Molefe | Network Engineer | IT | 46000 |
-| 11 | Nomvula Khumalo | Registered Nurse | Emergency & Trauma | 34000 |
-| 12 | Lerato Mokoena | Registered Nurse | Pediatrics | 33000 |
-| 13 | Bongani Ndlovu | Registered Nurse | Cardiology | 35000 |
-| 14 | Zanele Mahlangu | Nursing Sister | Theatre | 42000 |
-| 15 | Kagiso Sithole | Pharmacist | Pharmacy | 61000 |
-| 16 | Naledi Zulu | Pharmacy Assistant | Pharmacy | 26000 |
-| 17 | Themba Nkosi | Radiographer | Radiology | 44000 |
-| 18 | Palesa Radebe | Radiographer | Radiology | 43000 |
-| 19 | Deepak Pillay | Lab Technologist | Diagnostics Lab | 41000 |
-| 20 | Kavitha Govender | Lab Technician | Diagnostics Lab | 35000 |
-| 21 | Dr. Suresh Moodley | Consultant Radiologist | Radiology | 130000 |
-| 22 | Dr. Fatima Patel | Pediatrician | Pediatrics | 118000 |
-| 23 | Nisha Singh | Physiotherapist | Rehabilitation | 48000 |
-| 24 | Dr. Vikram Chetty | Anaesthetist | Theatre | 135000 |
-| 25 | David Smith | Facilities Manager | Operations | 52000 |
-| 26 | Karen O'Connor | Billing Administrator | Finance | 29000 |
-| 27 | James Wilson | Security Supervisor | Operations | 27000 |
-| 28 | Linda Fourie | Receptionist | Front Office | 19000 |
-| 29 | Peter van Wyk | Procurement Officer | Supply Chain | 38000 |
-| 30 | Andile Mbeki | Ward Clerk | Administration | 21000 |
+The SQL dump included multiple employee records and their associated employment and salary information.
 
 8.3 Shareholder information exposed
 
@@ -386,3 +367,6 @@ The following items have not been independently verified from the available evid
 No unverified figures or successful outcomes have been added.
 
 Report status: Final assessment report based on the evidence supplied.
+
+
+
