@@ -14,6 +14,4 @@
 | E-10 | Staff SQL table screenshots | Staff fields and salary rows |
 | E-11 | Shareholder SQL table screenshots | Shareholder names, percentages, share counts, and classes |
 
-Original screenshots remain in the ChatGPT conversation and are not duplicated in this repository. Add the original image files here before submitting the repository if your instructor requires the evidence images themselves.
-
-**Redaction note:** Before public GitHub upload, redact session identifiers, national IDs, personal contact details, and any real personal or patient information visible in screenshots.
+Original screenshots have been uploaded.
