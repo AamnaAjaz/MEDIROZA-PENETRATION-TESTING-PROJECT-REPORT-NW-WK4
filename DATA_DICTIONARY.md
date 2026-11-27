@@ -16,4 +16,4 @@
 - `shares_held`: number of shares held.
 - `share_class`: ordinary or preferential.
 
-Sensitive identifiers and direct contact fields present in the original dump have been excluded.
+
