@@ -77,31 +77,31 @@ SQL backup inspection   :	                   Identification of exposed database 
 
 # 4. Reconnaissance and Information Gathering
 
-4.1 WHOIS Enumeration
+ 4.1 WHOIS Enumeration
 
 The following domain information was identified:
 
-Item	Observation
-Domain	medirozahospital.com
-Registrar	Namecheap, Inc.
-Registration date	14 August 2026
-Updated date	17 August 2026
-Expiry date	14 August 2027
-Domain status	Client Transfer Prohibited
-DNSSEC	Unsigned
-Nameservers	dns1.namecheaphosting.com; dns2.namecheaphosting.com
+Item	: Observation
+Domain	: medirozahospital.com
+Registrar	:  Namecheap, Inc.
+Registration date	: 14 August 2026
+Updated date	:  17 August 2026
+Expiry date	:  14 August 2027
+Domain status	: Client Transfer Prohibited
+DNSSEC	:       Unsigned
+Nameservers	: dns1.namecheaphosting.com; dns2.namecheaphosting.com
 
-4.2 DNS Enumeration
+ 4.2 DNS Enumeration
 
 DNSRecon identified the following records:
 
-Record	Identified value
-A	199.188.201.16
-MX	mx1-hosting.jellyfish.systems
-MX	mx2-hosting.jellyfish.systems
-MX	mx3-hosting.jellyfish.systems
-TXT	v=DMARC1; p=none
-Additional records	SOA, NS, SRV
+Record --- Identified value
+A	    :   199.188.201.16
+MX	  :   mx1-hosting.jellyfish.systems
+MX	    : mx2-hosting.jellyfish.systems
+MX	   :  mx3-hosting.jellyfish.systems
+TXT	  :   v=DMARC1; p=none
+Additional records :	SOA, NS, SRV
 
 The DNS results also included service-discovery records associated with CalDAV, CardDAV, Autodiscover and cPanel.
 
