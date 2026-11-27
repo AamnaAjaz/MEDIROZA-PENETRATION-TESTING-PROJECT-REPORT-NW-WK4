@@ -57,7 +57,7 @@ Testing was limited to the authorised assessment scope. Social engineering and d
 
 The assessment followed a black-box testing approach, examining the application from an external user’s perspective.
 
-Tool / Technique	Purpose
+Tool / Technique	                                           Purpose
  
 WHOIS	Domain registration and ownership information
 
