@@ -3,27 +3,21 @@ An authorised black-box penetration testing project documenting SQL injection, a
 
 
 
-# Penetration Testing Report
 
-Mediroza Hospital     –        Web Application Security Assessment
+Penetration Testing Report
 
-Assessment type       :            Authorised Black-Box Web Application Penetration Test
+Mediroza Hospital – Web Application Security Assessment
 
-Target                :                     https://medirozahospital.com
-
-Assessment type       :          26–27 November 2026
-
-Testing environment   :        Kali Linux, VirtualBox and Microsoft Edge
-
-Assessment scope
-                  :           Public website, patient portal, exposed directories, authentication mechanism and accessible                                     database backup
-
-Project
-                  :                    NetworkWalks Cybersecurity Internship Assignment
+Assessment type: Authorised Black-Box Web Application Penetration Test
+Target: https://medirozahospital.com
+Assessment period: 26–27 November 2026
+Testing environment: Kali Linux, VirtualBox and Microsoft Edge
+Assessment scope: Public website, patient portal, exposed directories, authentication mechanism and accessible database backup
+Project: NetworkWalks Cybersecurity Internship Assignment
 
 ⸻
 
-# 1. Executive Summary
+1. Executive Summary
 
 An authorised penetration test was conducted against the Mediroza Hospital web application to identify security weaknesses and assess the confidentiality of information accessible through the website.
 
@@ -39,7 +33,7 @@ The accessible SQL backup contained database definitions and records for hospita
 
 These findings demonstrate significant weaknesses in authentication security, database protection and sensitive information exposure.
 
-# 2. Scope and Objectives
+2. Scope and Objectives
 
 The assessment focused on the following objectives:
 
@@ -53,65 +47,51 @@ The assessment focused on the following objectives:
 
 Testing was limited to the authorised assessment scope. Social engineering and denial-of-service testing were not performed.
 
-# 3. Methodology and Tools
+3. Methodology and Tools
 
 The assessment followed a black-box testing approach, examining the application from an external user’s perspective.
 
-Tool / Technique	                                           Purpose
- 
-WHOIS	                  :                            Domain registration and ownership information
+Tool / Technique	Purpose
+WHOIS	Domain registration and ownership information
+DNSRecon	DNS record enumeration
+WhatWeb	Web technology identification
+Microsoft Edge	Website and portal inspection
+Browser Developer Tools	Examination of HTTP requests and responses
+Kali Linux	Security testing environment
+SQL injection testing	Assessment of login authentication
+SQL backup inspection	Identification of exposed database information
 
-DNSRecon	              :                                        DNS record enumeration
+4. Reconnaissance and Information Gathering
 
-WhatWeb	                :                              Web technology identification
-
-Microsoft Edge          :                             	Website and portal inspection
-
-Browser Developer Tools	:                  Examination of HTTP requests and responses
- 
-Kali Linux	            :                              Security testing environment
-
-SQL injection testing 	:                      Assessment of login authentication
-
-SQL backup inspection   :	                   Identification of exposed database information
-
-# 4. Reconnaissance and Information Gathering
-
-  4.1 WHOIS Enumeration
+4.1 WHOIS Enumeration
 
 The following domain information was identified:
 
-Item	: Observation
-Domain	: medirozahospital.com
-Registrar	:  Namecheap, Inc.
-Registration date	: 14 August 2026
-Updated date	:  17 August 2026
-Expiry date	:  14 August 2027
-Domain status	: Client Transfer Prohibited
-DNSSEC	:       Unsigned
-Nameservers	: dns1.namecheaphosting.com; dns2.namecheaphosting.com
+Item	Observation
+Domain	medirozahospital.com
+Registrar	Namecheap, Inc.
+Registration date	14 August 2026
+Updated date	17 August 2026
+Expiry date	14 August 2027
+Domain status	Client Transfer Prohibited
+DNSSEC	Unsigned
+Nameservers	dns1.namecheaphosting.com; dns2.namecheaphosting.com
 
-  4.2 DNS Enumeration
+4.2 DNS Enumeration
 
 DNSRecon identified the following records:
 
-Record --- Identified value
-
-A	    :   199.188.201.16
-
-MX	  :   mx1-hosting.jellyfish.systems
-
-MX	    : mx2-hosting.jellyfish.systems
-
-MX	   :  mx3-hosting.jellyfish.systems
-
-TXT	  :   v=DMARC1; p=none
-
-Additional records :	SOA, NS, SRV
+Record	Identified value
+A	199.188.201.16
+MX	mx1-hosting.jellyfish.systems
+MX	mx2-hosting.jellyfish.systems
+MX	mx3-hosting.jellyfish.systems
+TXT	v=DMARC1; p=none
+Additional records	SOA, NS, SRV
 
 The DNS results also included service-discovery records associated with CalDAV, CardDAV, Autodiscover and cPanel.
 
-  4.3 Web Technology Identification
+4.3 Web Technology Identification
 
 WhatWeb identified:
 
@@ -123,20 +103,15 @@ WhatWeb identified:
 
 The website source also contained the CMS identification string Mediroza CMS 1.4.2.
 
-# 5. Directory and File Discovery
+5. Directory and File Discovery
 
 The website’s robots.txt file contained the following entries:
 
 Path	Observation
-
-/patient/	: Disallowed for crawlers
-
-/staff/ : Disallowed for crawlers
-
-/old/	: Disallowed for crawlers
-
-/sitemap.xml	: Sitemap reference
-
+/patient/	Disallowed for crawlers
+/staff/	Disallowed for crawlers
+/old/	Disallowed for crawlers
+/sitemap.xml	Sitemap reference
 
 The sitemap listed the following public pages:
 
@@ -151,19 +126,19 @@ mediroza_db_backup_2019.sql
 
 The backup was accessible through the browser without an additional authentication step.
 
-*Security significance:* The robots.txt entries were crawler instructions, not access-control restrictions. The exposed backup file represented a significant information-disclosure risk.
+Security significance: The robots.txt entries were crawler instructions, not access-control restrictions. The exposed backup file represented a significant information-disclosure risk.
 
-# 6. SQL Injection – Patient Portal Authentication Bypass
+6. SQL Injection – Patient Portal Authentication Bypass
 
 Critical finding
 
-  6.1 Affected component
+6.1 Affected component
 
 Patient Portal login:
 
 https://medirozahospital.com/patient/login.php
 
-  6.2 Initial observation
+6.2 Initial observation
 
 The patient portal presented a username and password form. Inspection of the page showed that the form submitted credentials through an HTTP POST request to login.php.
 
@@ -171,7 +146,7 @@ The normal login attempt returned an authentication failure message:
 
 Incorrect password.
 
-  6.3 Vulnerability identification
+6.3 Vulnerability identification
 
 During testing, a crafted SQL injection input was submitted through the username field.
 
@@ -181,7 +156,7 @@ admin'--
 
 The application subsequently displayed a MySQL syntax warning when a related malformed input was tested. The warning exposed database error information, indicating that user-supplied input was being incorporated into a database query without appropriate handling.
 
-  6.4 Successful authentication bypass
+6.4 Successful authentication bypass
 
 The SQL injection test was then used to bypass the normal login failure.
 
@@ -193,7 +168,7 @@ My Lab Reports
 
 This confirmed that the authentication mechanism was vulnerable to SQL injection.
 
-  6.5 Evidence
+6.5 Evidence
 
 The following evidence was captured:
 
@@ -203,7 +178,7 @@ The following evidence was captured:
 4. Successful access to the patient portal.
 5. Authenticated laboratory report listing.
 
-  6.6 Impact
+6.6 Impact
 
 An attacker could potentially:
 
@@ -214,17 +189,14 @@ An attacker could potentially:
 
 The vulnerability is classified as Critical because it allows authentication bypass and access to confidential information.
 
-# 7. Confidential Laboratory Reports Discovered
+7. Confidential Laboratory Reports Discovered
 
 Following successful access to the patient portal, three password-protected PDF reports were displayed.
 
-No.	Report title	------------------Lab reference  ------------Report date	-------File status
-
-1.	Pathology Report	– S. Dlamini - LR-2024-1187   ------	04 November 2024	------PDF encrypted
-
-2.	Pathology Report – P. Reddy	  -  LR-2024-1192	  ------05 November 2024	------PDF encrypted
-
-3.	Pathology Report – E. Thompson - LR-2024-1205	------06 November 2024	------PDF encrypted
+No.	Report title	Lab reference	Report date	File status
+1	Pathology Report – S. Dlamini	LR-2024-1187	04 November 2024	PDF encrypted
+2	Pathology Report – P. Reddy	LR-2024-1192	05 November 2024	PDF encrypted
+3	Pathology Report – E. Thompson	LR-2024-1205	06 November 2024	PDF encrypted
 
 The portal indicated that the reports were password-protected and that the password would be provided by the laboratory.
 
@@ -397,6 +369,3 @@ The following items have not been independently verified from the available evid
 No unverified figures or successful outcomes have been added.
 
 Report status: Final assessment report based on the evidence supplied.
-
-
-
