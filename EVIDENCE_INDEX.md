@@ -2,7 +2,7 @@
 
 | Evidence ID | Screenshot / source | What it supports |
 |---|---|---|
-| E-01 | WHOIS result screenshot (conversation upload) | Registrar and registration dates |
+| E-01 | WHOIS result screenshot | Registrar and registration dates |
 | E-02 | DNSrecon output screenshot(s) | A, NS, MX, TXT and SRV observations |
 | E-03 | WhatWeb output screenshot | HTTP status and observed technology fingerprint |
 | E-04 | Homepage source screenshot | `Mediroza CMS 1.4.2` string |
