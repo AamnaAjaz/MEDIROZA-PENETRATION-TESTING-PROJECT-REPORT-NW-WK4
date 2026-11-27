@@ -5,19 +5,26 @@ An authorised black-box penetration testing project documenting SQL injection, a
 
 # Penetration Testing Report
 
-Mediroza Hospital  –        Web Application Security Assessment
+Mediroza Hospital      
+–        Web Application Security Assessment
 
-Assessment type:            Authorised Black-Box Web Application Penetration Test
+Assessment type       
+:            Authorised Black-Box Web Application Penetration Test
 
-Target:                     https://medirozahospital.com
+Target
+:                     https://medirozahospital.com
 
-Assessment period:          26–27 November 2026
+Assessment period
+:          26–27 November 2026
 
-Testing environment:        Kali Linux, VirtualBox and Microsoft Edge
+Testing environment
+:        Kali Linux, VirtualBox and Microsoft Edge
 
-Assessment scope:           Public website, patient portal, exposed directories, authentication mechanism and accessible                                     database backup
+Assessment scope
+:           Public website, patient portal, exposed directories, authentication mechanism and accessible                                     database backup
 
-Project:                    NetworkWalks Cybersecurity Internship Assignment
+Project
+:                    NetworkWalks Cybersecurity Internship Assignment
 
 ⸻
 
