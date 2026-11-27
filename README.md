@@ -66,12 +66,13 @@ Open `REPORT.md` for the full narrative and `FINDINGS.md` for the vulnerability 
 7. Add regression tests for SQL injection, authentication bypass, and direct access to protected resources.
 8. Review access logs and determine whether the exposed backup or records were accessed outside the authorised exercise.
 
-## Limitations
+## For More
 
-This report is based on user-supplied screenshots and prior observations in the conversation. It is not a fresh independent scan. Exact dates for the five-day assessment, the full request payload, complete raw SQL dump, PDF decryption results, and complete evidence filenames were not provided in a machine-readable form. Findings are therefore labelled according to what the screenshots support.
+This penetration testing project was limited to the steps mentioned above. However, a full audit would include an analysis of open ports and their potential exploitation. Running services should also be evaluated. Furthermore, various cybersecurity tools—such as OpenVAS or ZAP—could be employed to conduct a more in-depth analysis of the web platform. 
 
 
-______
+
+____
 
 👤 Author
 Aamna Khatoon
