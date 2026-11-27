@@ -23,7 +23,7 @@ Project
 
 ⸻
 
-1. Executive Summary
+# 1. Executive Summary
 
 An authorised penetration test was conducted against the Mediroza Hospital web application to identify security weaknesses and assess the confidentiality of information accessible through the website.
 
@@ -39,7 +39,7 @@ The accessible SQL backup contained database definitions and records for hospita
 
 These findings demonstrate significant weaknesses in authentication security, database protection and sensitive information exposure.
 
-2. Scope and Objectives
+# 2. Scope and Objectives
 
 The assessment focused on the following objectives:
 
@@ -67,7 +67,7 @@ Kali Linux	Security testing environment
 SQL injection testing	Assessment of login authentication
 SQL backup inspection	Identification of exposed database information
 
-4. Reconnaissance and Information Gathering
+# 4. Reconnaissance and Information Gathering
 
 4.1 WHOIS Enumeration
 
