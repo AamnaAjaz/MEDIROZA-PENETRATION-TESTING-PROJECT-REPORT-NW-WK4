@@ -11,11 +11,11 @@ Assessment type:            Authorised Black-Box Web Application Penetration Tes
 
 Target:                     https://medirozahospital.com
 
-Assessment period:   26–27 November 2026
+Assessment period:          26–27 November 2026
 
-Testing environment: Kali Linux, VirtualBox and Microsoft Edge
+Testing environment:        Kali Linux, VirtualBox and Microsoft Edge
 
-Assessment scope: Public website, patient portal, exposed directories, authentication mechanism and accessible database backup
+Assessment scope:           Public website, patient portal, exposed directories, authentication mechanism and accessible                                     database backup
 
 Project: NetworkWalks Cybersecurity Internship Assignment
 
