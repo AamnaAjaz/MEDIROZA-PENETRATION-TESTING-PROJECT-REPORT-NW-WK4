@@ -218,13 +218,13 @@ The vulnerability is classified as Critical because it allows authentication byp
 
 Following successful access to the patient portal, three password-protected PDF reports were displayed.
 
-No.	Report title	-----Lab reference  -----Report date	-----File status
+No.	Report title	------------------Lab reference  ------------Report date	-------File status
 
-1.	Pathology Report	– S. Dlamini	LR-2024-1187	04 November 2024	PDF encrypted
+1.	Pathology Report	– S. Dlamini - LR-2024-1187   ------	04 November 2024	------PDF encrypted
 
-2.	Pathology Report – P. Reddy	LR-2024-1192	05 November 2024	PDF encrypted
+2.	Pathology Report – P. Reddy	  -  LR-2024-1192	  ------05 November 2024	------PDF encrypted
 
-3.	Pathology Report – E. Thompson	LR-2024-1205	06 November 2024	PDF encrypted
+3.	Pathology Report – E. Thompson - LR-2024-1205	------06 November 2024	------PDF encrypted
 
 The portal indicated that the reports were password-protected and that the password would be provided by the laboratory.
 
