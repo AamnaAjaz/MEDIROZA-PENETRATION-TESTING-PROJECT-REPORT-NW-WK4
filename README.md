@@ -69,3 +69,14 @@ Open `REPORT.md` for the full narrative and `FINDINGS.md` for the vulnerability 
 ## Limitations
 
 This report is based on user-supplied screenshots and prior observations in the conversation. It is not a fresh independent scan. Exact dates for the five-day assessment, the full request payload, complete raw SQL dump, PDF decryption results, and complete evidence filenames were not provided in a machine-readable form. Findings are therefore labelled according to what the screenshots support.
+
+
+______
+
+👤 Author
+Aamna Khatoon
+Cybersecurity intern B084
+
+LinkedIn: www.linkedin.com/in/aamna-khatoon-a47a54124
+📌 Project Information
+Program Name: Cybersecurity at Networkwalks | Week: 04 | Project: Real-world Penetration Testing - Mediroza Hospital | Repository: GitHub
