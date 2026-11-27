@@ -59,21 +59,21 @@ The assessment followed a black-box testing approach, examining the application 
 
 Tool / Technique	                                           Purpose
  
-WHOIS	Domain registration and ownership information
+WHOIS	                  :                            Domain registration and ownership information
 
-DNSRecon	DNS record enumeration
+DNSRecon	              :                                        DNS record enumeration
 
-WhatWeb	Web technology identification
+WhatWeb	                :                              Web technology identification
 
-Microsoft Edge	Website and portal inspection
+Microsoft Edge          :                             	Website and portal inspection
 
-Browser Developer Tools	Examination of HTTP requests and responses
+Browser Developer Tools	:                  Examination of HTTP requests and responses
+ 
+Kali Linux	            :                              Security testing environment
 
-Kali Linux	Security testing environment
+SQL injection testing 	:                      Assessment of login authentication
 
-SQL injection testing	Assessment of login authentication
-
-SQL backup inspection	Identification of exposed database information
+SQL backup inspection   :	                   Identification of exposed database information
 
 # 4. Reconnaissance and Information Gathering
 
