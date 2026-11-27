@@ -5,8 +5,7 @@ An authorised black-box penetration testing project documenting SQL injection, a
 
 # Penetration Testing Report
 
-Mediroza Hospital      
-                  –        Web Application Security Assessment
+Mediroza Hospital     –        Web Application Security Assessment
 
 Assessment type       
                   :            Authorised Black-Box Web Application Penetration Test
